@@ -163,7 +163,7 @@ var initParams = {
     "appRegion":"eu-gb.bluemix.net",
     "clientSecret":"a19b28ab-c2fe-4dae-80fa-e2ee0cdab61c"
 };
-bmsPush.initialize(params, callback);
+bmsPush.initialize(initParams, callback);
 bmsPush.register(function(response) {
     alert(response.response)
 });
