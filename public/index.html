@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <head>
+    <link rel="manifest" href="manifest.json">
+    <script src="BMSPushSDK.js" async></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Node-RED in Bluemix</title>
@@ -150,6 +152,22 @@ $(function() {
     });
 
 });
+
+
+var bmsPush = new BMSPush();
+function callback(response) {
+    alert(response.response)
+}
+var initParams = {
+    "appGUID":"8ff5df43-01af-4234-91af-1eb30fcdd425",
+    "appRegion":"eu-gb.bluemix.net",
+    "clientSecret":"a19b28ab-c2fe-4dae-80fa-e2ee0cdab61c"
+};
+bmsPush.initialize(params, callback);
+bmsPush.register(function(response) {
+    alert(response.response)
+});
+
 </script>
 </body>
 </html>
