@@ -22,9 +22,7 @@ NODE_RED_PASSWORD // the passowrd
 
 # Connect the app to IBM IoT for Insurance service
 
-The application can be connected to the IoT for Insurance service using different options as explained below:
-- Bind the IoT for insurance service to the app then restart the app.
-- Manually enter the service credentials in the node settings using node-red editor.
+provide an environmental variable in Bluemix called **uri** which is the same as the one found in the IBM IoT for insurance service console, then restage the app.
 
 
 # Flow used
