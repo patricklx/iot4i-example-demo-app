@@ -1,7 +1,6 @@
-This is a work in progress project and not ready.
 
 # Overview
-The goal of this node-red application is to show how to use [node-red-contrib-ibm-ioti](https://github.com/alronz/node-red-contrib-ibm-ioti) to create a simple demo application of the insurance company policy holders using IBM service [IoT for insurance](https://console.ng.bluemix.net/docs/services/IotInsurance/index.html). 
+A demo web application using [node-red-contrib-ibm-ioti](https://github.com/alronz/node-red-contrib-ibm-ioti) and IBM service [IoT for insurance](https://console.ng.bluemix.net/docs/services/IotInsurance/index.html). 
 
 
 # How to run
@@ -27,13 +26,6 @@ provide an environmental variable in Bluemix called **uri** which is the same as
 
 # Flow used
 
-The flow used in this application can be found in [flow.json](./defaults/flow.json). A screenshot of how the flow looks like in node-red editor is shown below:
-
-
-
-# UI generated
-
-Below is a screenshot of the UI generated:
- 
+The flow used in this application can be found in [flow.json](./defaults/flow.json). 
 
  
