@@ -1405,7 +1405,7 @@
     "type": "function",
     "z": "532a8de4.58e8a4",
     "name": "",
-    "func": " if (!msg.error)\n{\n    msg.payload = JSON.parse(msg.body);\n}else\n{\n    msg.payload = 'failed';\n}\n\nreturn msg;",
+    "func": " if (!msg.error)\n{\n    msg.payload = JSON.parse(msg.body);\n    insertionSort(msg.payload.hazardEvents,\"timestamp\");\n}else\n{\n    msg.payload = 'failed';\n}\n\nfunction insertionSort(files,attrToSortBy){\n  for(var k=1; k < files.length; k++){\n     for(var i=k; i > 0 && new Date(files[i][attrToSortBy]) < \n       new Date(files[i-1][attrToSortBy]); i--){\n\n        var tmpFile = files[i];\n        files[i] = files[i-1];\n        files[i-1] = tmpFile;\n\n     }\n  }\n\n}\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 344.464572429657,
@@ -1529,7 +1529,7 @@
     "func": "\nmsg.payload = 'failed';\n\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 512.6666259765625,
+    "x": 514.6666259765625,
     "y": 171.55555725097656,
     "wires": [
       [
@@ -1997,7 +1997,7 @@
     "type": "function",
     "z": "532a8de4.58e8a4",
     "name": "",
-    "func": "\nvar prevCount = context.get(\"count\")\nvar hazardEvents = msg.payload.hazardEvents;\nvar currentCount = msg.payload.hazardEvents.length;\nif (currentCount > prevCount)\n{\nmsg.payload = {};\nmsg.payload.hazard = true;\nmsg.payload.hazardEvent = hazardEvents[currentCount -1];\n}\ncontext.set(\"count\",hazardEvents.length);\n\n\n\nreturn msg;",
+    "func": "\nvar prevCount = context.get(\"count\")\nvar hazardEvents = msg.payload.hazardEvents;\nvar currentCount = msg.payload.hazardEvents.length;\nif (currentCount > prevCount)\n{\nmsg.payload = {};\nmsg.payload.hazard = true;\ninsertionSort(hazardEvents,\"timestamp\");\nmsg.payload.hazardEvent = hazardEvents[currentCount -1];\n}\ncontext.set(\"count\",hazardEvents.length);\n\nfunction insertionSort(files,attrToSortBy){\n  for(var k=1; k < files.length; k++){\n     for(var i=k; i > 0 && new Date(files[i][attrToSortBy]) < \n       new Date(files[i-1][attrToSortBy]); i--){\n\n        var tmpFile = files[i];\n        files[i] = files[i-1];\n        files[i-1] = tmpFile;\n\n     }\n  }\n\n}\n\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 450.5,
