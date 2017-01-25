@@ -1405,7 +1405,7 @@
     "type": "function",
     "z": "532a8de4.58e8a4",
     "name": "",
-    "func": " if (!msg.error)\n{\n    msg.payload = JSON.parse(msg.body);\n    insertionSort(msg.payload.hazardEvents,\"timestamp\");\n}else\n{\n    msg.payload = 'failed';\n}\n\nfunction insertionSort(files,attrToSortBy){\n  for(var k=1; k < files.length; k++){\n     for(var i=k; i > 0 && new Date(files[i][attrToSortBy]) < \n       new Date(files[i-1][attrToSortBy]); i--){\n\n        var tmpFile = files[i];\n        files[i] = files[i-1];\n        files[i-1] = tmpFile;\n\n     }\n  }\n\n}\n\nreturn msg;",
+    "func": " if (!msg.error)\n{\n    msg.payload = JSON.parse(msg.body);\n}else\n{\n    msg.payload = 'failed';\n}\n\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 344.464572429657,
