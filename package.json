@@ -38,6 +38,7 @@
     "node-red-dashboard": "^2.2.1",
     "node-red-node-watson": "0.x",
     "redis": "~0.10.1",
+    "twilio": "^2.11.1",
     "when": "~3.x"
   }
 }
